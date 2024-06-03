@@ -1,0 +1,29 @@
+Unscrew six screws around the back of the fish's case. Carefully open the case halfway and observe the mainboard with 5 headers on it. The case cannot be opened with the headers plugged in. Unplug all of the headers from the mainboard and finish opening the case.
+
+Observe the five headers
+
+Six Pin Header
+Red             6V power
+Black           Speaker 1
+Orange          Speaker 2
+White           4.5V power
+Blue            Ground
+Light Blue      Power Switch Then Ground
+
+Four Pin Header
+Red             Mouth Moter Negative
+Black           Head/Tail Moter Negative
+Grey            Mouth Moter Positive
+Orange          Head/Tail Moter Positive
+
+Two Pin Header One
+White           Button 1
+White           Button 2
+
+Two Pin Header Two
+Yellow          Photosensor 1
+Yellow          Photosensor 2
+
+Two Pin Header Three
+Blue            Audio Sensor 1
+Blue            Audio Sensor 2
