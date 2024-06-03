@@ -12,7 +12,7 @@ while True:
     try:
         data, addr = udp_server_socket.recvfrom(4096)
         if len(data) > 0:
-            print(f"Received {len(data)} bytes from {addr}")
+            print(data.decode())
             udp_server_socket.sendto(data, addr)
 
     except BlockingIOError:

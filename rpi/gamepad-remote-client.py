@@ -4,7 +4,7 @@ import socket
 import random
 import time
 
-HOST = ''  # Default localhost
+HOST = '192.168.1.227'  # Default localhost
 PORT = int(sys.argv[1]) if len(sys.argv) >= 2 else 5555
 
 udp_client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -28,29 +28,45 @@ if num_joysticks > 0:
         
         for event in events:
             if event.type == pygame.JOYBUTTONDOWN:
-                print("Button " + str(event.dict["button"]) + " Pressed")
+                message = "Button " + str(event.dict["button"]) + " Pressed"
+                print(message)
+                udp_client_socket.sendto(message.encode(), (HOST, PORT))
             if event.type == pygame.JOYBUTTONUP: 
-                print("Button " + str(event.dict["button"]) + " Released")
+                message = "Button " + str(event.dict["button"]) + " Released"
+                print(message)
+                udp_client_socket.sendto(message.encode(), (HOST, PORT))
             if event.type == pygame.JOYAXISMOTION:
                 if event.dict["axis"] == 1:
                     if event.dict["value"] < -0.25:
-                        print("Joy Y Moved Up")
-                        udp_client_socket.sendto(data, (HOST, PORT))
+                        message = "Joy Y Moved Up"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
                     elif event.dict["value"] > 0.25:
-                        print("Joy Y Moved Down")
+                        message = "Joy Y Moved Down"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
                     else:
-                        print("Joy Y Neutral")
+                        message = "Joy Y Neutral"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
                 if event.dict["axis"] == 0:
                     if event.dict["value"] < -0.25:
-                        print("Joy X Moved Left")
+                        message = "Joy X Moved Left"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
                     elif event.dict["value"] > 0.25:
-                        print("Joy X Moved Right")
+                        message = "Joy X Moved Right"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
                     else:
-                        print("Joy X Neutral")
+                        message = "Joy X Neutral"
+                        print(message)
+                        udp_client_socket.sendto(message.encode(), (HOST, PORT))
 
 
             if event.type == pygame.JOYHATMOTION:
-                print("Joy Hat Moved")
-                print(event)
+                message = "Joy Hat Moved"
+                print(message)
+                udp_client_socket.sendto(message.encode(), (HOST, PORT))
 
 udp_client_socket.close()
