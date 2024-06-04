@@ -1,22 +1,57 @@
-install packages
+Reading from the Midi Through Port in Python
 
-$ sudo apt -y install python3 python3-venv python3-pip
+Here is a step-by-step guide on how to read from the MIDI Through Port in Python on Debian Linux:
 
-$ python3 -m venv venv
-$ source venv/bin/activate
+Prerequisites
 
-$ python3 -m pip install pygame
+Debian 12 Bookworm (or compatible)
 
-create symlink workaround (https://github.com/pygame/pygame/issues/3756)
+You can use the provided daisy-bell.midi file for testing, which is under the public domain (CC0).
+
+Installation and Setup
+
+Open a terminal and execute the following commands to install necessary packages and set up the virtual environment.
+
+Install required packages
+
+sudo apt-get install python3 python3-venv python3-pip
+
+Create a virtual environment
+
+python3 -m venv venv
+
+Activate the virtual environment
+
+source venv/bin/activate
+
+Install pygame library: python3 -m pip install pygame
+
+Symlink Workaround
+
+(https://github.com/pygame/pygame/issues/3756)
+
+It appears an update to alsa has caused the files to move. Create a symlink in the old location so pygame can find them.
 
 $ sudo ln -s /usr/share/alsa /usr/local/share/alsa
 
-view midi devices in pygame
+Running the Script
 
-$ python3
+Run the Python script.
 
-inside python
+python3 midi-through-port-test.py
 
->>> import pygame.midi
->>> pygame.midi.init()
->>> pygame.midi.get_count()
+Getting the MIDI Through Port
+
+Open another terminal and run: aconnect -l
+Note the number after "client" on the line titled "Midi Through Port-0". This is the port you will play the MIDI file through.
+
+Playing the MIDI File
+
+Play the MIDI file using: aplaymidi --port <port_number> daisy-bell.midi
+Replace <port_number> with the number you got from aconnect -l.
+
+Expected Output
+
+The Python script should output the MIDI events.
+
+By following these steps, you should be able to read from the MIDI Through Port in Python on Debian Linux.
