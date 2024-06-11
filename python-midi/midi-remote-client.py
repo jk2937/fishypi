@@ -1,3 +1,14 @@
+
+import socket
+import sys
+import random
+import time
+
+HOST = '192.168.1.139'  
+PORT = 5555
+
+udp_client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
 import pygame.midi
 
 pygame.midi.init()
@@ -19,9 +30,33 @@ while True:
         print(message)
         if message[0][0] == 144:
             print("Note On")
-            print(f"Pitch Class: {message[0][1] % 12}")
+            pc = message[0][1] % 12
+            print(f"Pitch Class: {pc}")
+            if pc == 0:
+                udp_client_socket.sendto("A Negative".encode(), (HOST, PORT))
+            if pc == 1:
+                udp_client_socket.sendto("A Positive".encode(), (HOST, PORT))
+            if pc == 2:
+                udp_client_socket.sendto("B Negative".encode(), (HOST, PORT))
+            if pc == 3:
+                udp_client_socket.sendto("B Positive".encode(), (HOST, PORT))
         if message[0][0] == 128:
             print("Note Off")
-            print(f"Pitch Class: {message[0][1] % 12}")
+            pc = message[0][1] % 12
+            print(f"Pitch Class: {pc}")
+            if pc == 0:
+                udp_client_socket.sendto("A Neutral".encode(), (HOST, PORT))
+            if pc == 1:
+                udp_client_socket.sendto("A Neutral".encode(), (HOST, PORT))
+            if pc == 2:
+                udp_client_socket.sendto("B Neutral".encode(), (HOST, PORT))
+            if pc == 3:
+                udp_client_socket.sendto("B Neutral".encode(), (HOST, PORT))
         if message[0][0] != 144 and message[0][0] != 128 and message[0][1] == 120:
             print("All Notes Off")
+            udp_client_socket.sendto("A Neutral".encode(), (HOST, PORT))
+            udp_client_socket.sendto("B Neutral".encode(), (HOST, PORT))
+    time.sleep(0.001)
+
+
+udp_client_socket.close()
