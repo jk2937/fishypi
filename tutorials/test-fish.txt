@@ -46,18 +46,3 @@ Next, activate the motor to move the fish's head forward. (motor-test-head-forwa
 
 Finally, activate the motor to move the fish's tail forward. (motor-test-tail-forward.fzz)
 
-Future Tutorial Topics
-
-Gathering the Parts
-
-Testing the Fish
-
-Creating the Circuit
-
-Installing, Configuring, and Testing the Raspberry Pi
-
-Creating Audio/MIDI Files
-
-Tuning your Fish (You can tuna fish!)
-
-Running Without a PC

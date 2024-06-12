@@ -1,0 +1,13 @@
+Parts List
+
+Here is a list of parts you will need to complete this project.
+
+Big Mouth Billy Bass
+
+Raspberry Pi Breadboard
+
+Breadboard Wires
+
+L298N Motor Driver
+
+

@@ -1,0 +1,15 @@
+Future Tutorial Topics
+
+Gathering the Parts
+
+Testing the Fish Motors
+
+Creating the Circuit
+
+Installing, Configuring, and Testing the Raspberry Pi
+
+Creating Audio/MIDI Files
+
+Tuning the Fish's Movements
+
+Running Without a PC
