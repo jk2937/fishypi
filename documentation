@@ -48,10 +48,14 @@ Finally, activate the motor to move the fish's tail forward. (motor-test-tail-fo
 
 Future Tutorial Topics
 
-Installing and Configuring the Raspberry Pi
+Gathering the Parts
+
+Testing the Fish
 
 Creating the Circuit
 
-Tuning your Fish (You can tuna fish!)
+Installing, Configuring, and Testing the Raspberry Pi
 
-Creating Audio Files
+Creating Audio/MIDI Files
+
+Tuning your Fish (You can tuna fish!)
