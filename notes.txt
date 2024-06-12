@@ -59,3 +59,5 @@ Installing, Configuring, and Testing the Raspberry Pi
 Creating Audio/MIDI Files
 
 Tuning your Fish (You can tuna fish!)
+
+Running Without a PC
