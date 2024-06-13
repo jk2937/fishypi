@@ -1,0 +1,5 @@
+Building the motor-test circuit is the first step in testing the motors without the Raspberry Pi or the motor driver. The fish's headers are shown at the bottom of the diagram. After building this circuit, test the motors by modifying the circuit based on the motor-test-head-foreward, motor-test-mouth-open, and motor-test-tail-foreward files. 
+
+wiring-diagram-complete shows the project completed with the Raspberry Pi and the L298N motor driver. The motor driver is shown on the top right. Looking at tutorials online for using the L298N motor driver with the Raspberry Pi is also useful.
+
+wiring-diagram-fish-only, wiring-diagram-motor-controller-only, and wiring-diagram-pi-only show only portions of the complete circuit for visibility purposes. When building the complete circuit it may be helpful to refer to these as the complete circuit is somewhat cluttered.
