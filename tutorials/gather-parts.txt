@@ -4,10 +4,12 @@ Here is a list of parts you will need to complete this project.
 
 Big Mouth Billy Bass
 
+Raspberry Pi 3
+
 Raspberry Pi Breadboard
 
 Breadboard Wires
 
 L298N Motor Driver
 
-
+Screwdriver
